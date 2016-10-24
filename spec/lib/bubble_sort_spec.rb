@@ -25,5 +25,13 @@ describe BubbleSort do
 				end
 			expect(param).to eq ["hi","hey","hello"]
 		end
+
+		it "accepting multitple inputs" do
+			bs = BubbleSort.new
+			param = bs.bubble_sort_by(["begin","bean","lol","ov","b"]) do |left,right|
+					left.length - right.length
+				end
+			expect(param).to eq ["b","ov","lol","bean","begin"]
+		end
 	end
 end
